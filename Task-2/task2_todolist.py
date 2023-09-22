@@ -7,14 +7,14 @@ def add_item(entry: Entry, listbox: Listbox):
 
     listbox.insert(END, new_task)
 
-    with open(r'C:\Users\moham\My Drive\CodSoft\tasks.txt', 'a') as tasks_list_file:
+    with open(r'C:\Users\moham\My Drive\GitHub Repos\CODSOFTAUGUST\Task-2\tasks.txt', 'a') as tasks_list_file:
         tasks_list_file.write(f'\n{new_task}')
 
 
 def delete_item(listbox: Listbox):
     listbox.delete(ACTIVE)
 
-    with open(r'C:\Users\moham\My Drive\CodSoft\tasks.txt', 'r+') as tasks_list_file:
+    with open(r'C:\Users\moham\My Drive\GitHub Repos\CODSOFTAUGUST\Task-2\tasks.txt', 'r+') as tasks_list_file:
         lines = tasks_list_file.readlines()
 
         tasks_list_file.truncate()
@@ -49,7 +49,7 @@ tasks.config(yscrollcommand=scroller.set)
 tasks.place(x=35, y=50)
 
 # Adding items to the Listbox
-with open(r'C:\Users\moham\My Drive\CodSoft\tasks.txt', 'r+') as tasks_list:
+with open(r'C:\Users\moham\My Drive\GitHub Repos\CODSOFTAUGUST\Task-2\tasks.txt', 'r+') as tasks_list:
     for task in tasks_list:
         tasks.insert(END, task)
     tasks_list.close()
